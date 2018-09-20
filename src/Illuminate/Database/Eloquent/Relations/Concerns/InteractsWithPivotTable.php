@@ -101,7 +101,10 @@ trait InteractsWithPivotTable
         // array of the new IDs given to the method which will complete the sync.
         if ($detaching && count($detach) > 0) {
             $this->detach($detach);
-
+        }
+        
+        // Still set to use in returned chnages 
+        if (!$detaching && count($detach) > 0) {
             $changes['detached'] = $this->castKeys($detach);
         }
 
